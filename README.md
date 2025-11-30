@@ -11,9 +11,8 @@ The project implements an end-to-end workflow including data loading, explorator
 * **End-to-End Forecasting Pipeline:** From raw CSV → EDA → feature engineering → baseline → advanced modeling → cross-validation → final predictions.
 * **Feature Engineering:** Created meaningful time-based features and generated **lag features** and **rolling statistics** to capture temporal dependencies.
 * **Baseline Models:** Implemented simple (Last Year Sales) and **Linear Regression** baselines to benchmark performance.
-* **Advanced Models:** Compared **XGBoost**, **LightGBM**, and **LSTM** deep learning models for forecasting.
+* **Advanced Models:** Compared **XGBoost**, and **LSTM** deep learning models for forecasting.
 * **Time-Series Cross-Validation:** Used **expanding-window folds** to evaluate models while respecting temporal order.
-* **Transparent Results:** All metrics (e.g., RMSE) reported as-is without hiding limitations.
 
 ---
 
@@ -66,7 +65,7 @@ This project uses the **Store Item Demand Forecasting** dataset from Kaggle.
     * Handled missing values (NaNs) created after lag/rolling calculation.
 
 3.  ### Advanced Models & Comparison
-    * Trained XGBoost, LightGBM, and LSTM models using engineered features.
+    * Trained XGBoost, and LSTM models using engineered features.
     * **Baseline Modeling:**
         * Simple baseline: last year's same period sales.
         * Linear Regression baseline using only date features.
@@ -92,6 +91,6 @@ This project uses the **Store Item Demand Forecasting** dataset from Kaggle.
 | **Linear Regression Baseline** | $30.70$ | Poor fit due to complex temporal patterns. |
 | **XGBoost (Initial Fit)** | $7.90$ | Strong tree-based performance. |
 | **LSTM (Initial Fit)** | $5.86$ | Slightly better capture of sequential dependency. |
-| **Time-Series CV (Best Model Avg.)** | $5.35$ | Most reliable performance metric. |
+| **Time-Series CV (XGBoost)** | $5.35$ | Most reliable performance metric. |
 
-> **Final Choice:** LSTM slightly outperformed XGBoost in raw RMSE ($5.86$ vs $7.90$), but XGBoost was chosen for the final submission due to its **simplicity**, **reproducibility**, and **faster training time**.
+> **Final Choice:** LSTM slightly outperformed XGBoost in RMSE but XGBoost was chosen for the final submission due to simplicity, reproducibility, and faster training time.
