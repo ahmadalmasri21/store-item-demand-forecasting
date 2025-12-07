@@ -93,4 +93,3 @@ This project uses the **Store Item Demand Forecasting** dataset from Kaggle.
 | **LSTM (Initial Fit)** | $5.86$ | Slightly better capture of sequential dependency. |
 | **Time-Series CV (XGBoost)** | $5.35$ | Most reliable performance metric. |
 
-> **Final Choice:** LSTM slightly outperformed XGBoost in RMSE but XGBoost was chosen for the final submission due to simplicity, reproducibility, and faster training time.
